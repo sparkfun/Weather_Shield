@@ -15404,6 +15404,9 @@ logo. Default layer for the logo on the board is tSilk.</description>
 <part name="SUPPLY8" library="SparkFun-Aesthetics" deviceset="5V" device=""/>
 <part name="SUPPLY10" library="SparkFun-Aesthetics" deviceset="5V" device=""/>
 <part name="LOGO2" library="SparkFun-Aesthetics" deviceset="SFE_LOGO_NAME_FLAME" device=".1_INCH" value="SFE_LOGO_NAME_FLAME.1_INCH"/>
+<part name="R7" library="SparkFun" deviceset="RESISTOR" device="0603-RES" value="1K"/>
+<part name="R8" library="SparkFun" deviceset="RESISTOR" device="0603-RES" value="3.9K"/>
+<part name="GND28" library="SparkFun" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -15487,22 +15490,22 @@ logo. Default layer for the logo on the board is tSilk.</description>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
 <instance part="FRAME1" gate="G$2" x="147.32" y="0"/>
 <instance part="GND1" gate="1" x="185.42" y="121.92"/>
-<instance part="Q1" gate="G$1" x="121.92" y="152.4" smashed="yes" rot="R270">
-<attribute name="NAME" x="118.11" y="157.226" size="1.778" layer="95"/>
-<attribute name="VALUE" x="116.586" y="146.812" size="1.778" layer="96"/>
+<instance part="Q1" gate="G$1" x="109.22" y="149.86" smashed="yes" rot="R270">
+<attribute name="NAME" x="105.41" y="154.686" size="1.778" layer="95"/>
+<attribute name="VALUE" x="103.886" y="144.272" size="1.778" layer="96"/>
 </instance>
-<instance part="R3" gate="G$1" x="114.3" y="160.02" rot="R270"/>
-<instance part="R4" gate="G$1" x="129.54" y="160.02" rot="R270"/>
-<instance part="Q2" gate="G$1" x="121.92" y="119.38" smashed="yes" rot="R270">
-<attribute name="NAME" x="118.11" y="124.206" size="1.778" layer="95"/>
-<attribute name="VALUE" x="116.586" y="113.792" size="1.778" layer="96"/>
+<instance part="R3" gate="G$1" x="101.6" y="157.48" rot="R270"/>
+<instance part="R4" gate="G$1" x="116.84" y="157.48" rot="R270"/>
+<instance part="Q2" gate="G$1" x="109.22" y="116.84" smashed="yes" rot="R270">
+<attribute name="NAME" x="105.41" y="121.666" size="1.778" layer="95"/>
+<attribute name="VALUE" x="103.886" y="111.252" size="1.778" layer="96"/>
 </instance>
-<instance part="R2" gate="G$1" x="114.3" y="127" rot="R270"/>
-<instance part="R5" gate="G$1" x="129.54" y="127" rot="R270"/>
-<instance part="P+9" gate="G$1" x="114.3" y="170.18"/>
-<instance part="P+11" gate="G$1" x="114.3" y="137.16"/>
-<instance part="SUPPLY1" gate="G$1" x="129.54" y="170.18"/>
-<instance part="SUPPLY2" gate="G$1" x="129.54" y="137.16"/>
+<instance part="R2" gate="G$1" x="101.6" y="124.46" rot="R270"/>
+<instance part="R5" gate="G$1" x="116.84" y="124.46" rot="R270"/>
+<instance part="P+9" gate="G$1" x="101.6" y="167.64"/>
+<instance part="P+11" gate="G$1" x="101.6" y="134.62"/>
+<instance part="SUPPLY1" gate="G$1" x="116.84" y="167.64"/>
+<instance part="SUPPLY2" gate="G$1" x="116.84" y="134.62"/>
 <instance part="SUPPLY3" gate="G$1" x="185.42" y="147.32"/>
 <instance part="JP10-DNP" gate="G$1" x="162.56" y="76.2" smashed="yes" rot="MR180">
 <attribute name="NAME" x="157.48" y="63.373" size="1.778" layer="95"/>
@@ -15560,6 +15563,9 @@ logo. Default layer for the logo on the board is tSilk.</description>
 <instance part="SUPPLY8" gate="G$1" x="238.76" y="91.44"/>
 <instance part="SUPPLY10" gate="G$1" x="139.7" y="93.98"/>
 <instance part="LOGO2" gate="G$1" x="187.96" y="35.56"/>
+<instance part="R7" gate="G$1" x="154.94" y="149.86" rot="MR270"/>
+<instance part="R8" gate="G$1" x="154.94" y="167.64" rot="MR270"/>
+<instance part="GND28" gate="1" x="154.94" y="139.7"/>
 </instances>
 <busses>
 </busses>
@@ -15697,6 +15703,11 @@ logo. Default layer for the logo on the board is tSilk.</description>
 <pinref part="GND3" gate="1" pin="GND"/>
 <pinref part="R12" gate="G$1" pin="2"/>
 </segment>
+<segment>
+<wire x1="154.94" y1="142.24" x2="154.94" y2="144.78" width="0.1524" layer="91"/>
+<pinref part="R7" gate="G$1" pin="2"/>
+<pinref part="GND28" gate="1" pin="GND"/>
+</segment>
 </net>
 <net name="STAT2" class="0">
 <segment>
@@ -15745,6 +15756,11 @@ logo. Default layer for the logo on the board is tSilk.</description>
 <pinref part="U1" gate="G$1" pin="VIN"/>
 <wire x1="187.96" y1="144.78" x2="180.34" y2="144.78" width="0.1524" layer="91"/>
 <label x="180.34" y="144.78" size="1.016" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="R8" gate="G$1" pin="1"/>
+<wire x1="154.94" y1="172.72" x2="154.94" y2="177.8" width="0.1524" layer="91"/>
+<label x="154.94" y="177.8" size="1.27" layer="95" rot="R90" xref="yes"/>
 </segment>
 </net>
 <net name="RXI" class="0">
@@ -15836,21 +15852,21 @@ logo. Default layer for the logo on the board is tSilk.</description>
 <pinref part="P+5" gate="1" pin="VCC"/>
 </segment>
 <segment>
-<wire x1="114.3" y1="165.1" x2="114.3" y2="167.64" width="0.1524" layer="91"/>
-<wire x1="114.3" y1="167.64" x2="114.3" y2="170.18" width="0.1524" layer="91"/>
-<wire x1="121.92" y1="160.02" x2="121.92" y2="167.64" width="0.1524" layer="91"/>
-<wire x1="121.92" y1="167.64" x2="114.3" y2="167.64" width="0.1524" layer="91"/>
-<junction x="114.3" y="167.64"/>
+<wire x1="101.6" y1="162.56" x2="101.6" y2="165.1" width="0.1524" layer="91"/>
+<wire x1="101.6" y1="165.1" x2="101.6" y2="167.64" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="157.48" x2="109.22" y2="165.1" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="165.1" x2="101.6" y2="165.1" width="0.1524" layer="91"/>
+<junction x="101.6" y="165.1"/>
 <pinref part="R3" gate="G$1" pin="1"/>
 <pinref part="Q1" gate="G$1" pin="G"/>
 <pinref part="P+9" gate="G$1" pin="3.3V"/>
 </segment>
 <segment>
-<wire x1="114.3" y1="132.08" x2="114.3" y2="134.62" width="0.1524" layer="91"/>
-<wire x1="114.3" y1="134.62" x2="114.3" y2="137.16" width="0.1524" layer="91"/>
-<wire x1="121.92" y1="127" x2="121.92" y2="134.62" width="0.1524" layer="91"/>
-<wire x1="121.92" y1="134.62" x2="114.3" y2="134.62" width="0.1524" layer="91"/>
-<junction x="114.3" y="134.62"/>
+<wire x1="101.6" y1="129.54" x2="101.6" y2="132.08" width="0.1524" layer="91"/>
+<wire x1="101.6" y1="132.08" x2="101.6" y2="134.62" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="124.46" x2="109.22" y2="132.08" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="132.08" x2="101.6" y2="132.08" width="0.1524" layer="91"/>
+<junction x="101.6" y="132.08"/>
 <pinref part="R2" gate="G$1" pin="1"/>
 <pinref part="Q2" gate="G$1" pin="G"/>
 <pinref part="P+11" gate="G$1" pin="3.3V"/>
@@ -15868,13 +15884,13 @@ logo. Default layer for the logo on the board is tSilk.</description>
 <wire x1="55.88" y1="116.84" x2="60.96" y2="116.84" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<wire x1="116.84" y1="119.38" x2="114.3" y2="119.38" width="0.1524" layer="91"/>
-<wire x1="114.3" y1="119.38" x2="111.76" y2="119.38" width="0.1524" layer="91"/>
-<wire x1="114.3" y1="121.92" x2="114.3" y2="119.38" width="0.1524" layer="91"/>
-<junction x="114.3" y="119.38"/>
+<wire x1="104.14" y1="116.84" x2="101.6" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="101.6" y1="116.84" x2="99.06" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="101.6" y1="119.38" x2="101.6" y2="116.84" width="0.1524" layer="91"/>
+<junction x="101.6" y="116.84"/>
 <pinref part="Q2" gate="G$1" pin="S"/>
 <pinref part="R2" gate="G$1" pin="2"/>
-<label x="111.76" y="119.38" size="1.27" layer="95" rot="R180" xref="yes"/>
+<label x="99.06" y="116.84" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="SDA" class="0">
@@ -15889,13 +15905,13 @@ logo. Default layer for the logo on the board is tSilk.</description>
 <wire x1="55.88" y1="119.38" x2="60.96" y2="119.38" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<wire x1="116.84" y1="152.4" x2="114.3" y2="152.4" width="0.1524" layer="91"/>
-<wire x1="114.3" y1="152.4" x2="111.76" y2="152.4" width="0.1524" layer="91"/>
-<wire x1="114.3" y1="154.94" x2="114.3" y2="152.4" width="0.1524" layer="91"/>
-<junction x="114.3" y="152.4"/>
+<wire x1="104.14" y1="149.86" x2="101.6" y2="149.86" width="0.1524" layer="91"/>
+<wire x1="101.6" y1="149.86" x2="99.06" y2="149.86" width="0.1524" layer="91"/>
+<wire x1="101.6" y1="152.4" x2="101.6" y2="149.86" width="0.1524" layer="91"/>
+<junction x="101.6" y="149.86"/>
 <pinref part="Q1" gate="G$1" pin="S"/>
 <pinref part="R3" gate="G$1" pin="2"/>
-<label x="111.76" y="152.4" size="1.27" layer="95" rot="R180" xref="yes"/>
+<label x="99.06" y="149.86" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="INT-PRESSURE" class="0">
@@ -15999,13 +16015,13 @@ logo. Default layer for the logo on the board is tSilk.</description>
 <label x="182.88" y="160.02" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<wire x1="127" y1="152.4" x2="129.54" y2="152.4" width="0.1524" layer="91"/>
-<wire x1="129.54" y1="152.4" x2="132.08" y2="152.4" width="0.1524" layer="91"/>
-<wire x1="129.54" y1="154.94" x2="129.54" y2="152.4" width="0.1524" layer="91"/>
-<junction x="129.54" y="152.4"/>
+<wire x1="114.3" y1="149.86" x2="116.84" y2="149.86" width="0.1524" layer="91"/>
+<wire x1="116.84" y1="149.86" x2="119.38" y2="149.86" width="0.1524" layer="91"/>
+<wire x1="116.84" y1="152.4" x2="116.84" y2="149.86" width="0.1524" layer="91"/>
+<junction x="116.84" y="149.86"/>
 <pinref part="Q1" gate="G$1" pin="D"/>
 <pinref part="R4" gate="G$1" pin="2"/>
-<label x="132.08" y="152.4" size="1.27" layer="95" xref="yes"/>
+<label x="119.38" y="149.86" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="HV_SCL" class="0">
@@ -16015,13 +16031,13 @@ logo. Default layer for the logo on the board is tSilk.</description>
 <label x="182.88" y="157.48" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<wire x1="127" y1="119.38" x2="129.54" y2="119.38" width="0.1524" layer="91"/>
-<wire x1="129.54" y1="119.38" x2="132.08" y2="119.38" width="0.1524" layer="91"/>
-<wire x1="129.54" y1="121.92" x2="129.54" y2="119.38" width="0.1524" layer="91"/>
-<junction x="129.54" y="119.38"/>
+<wire x1="114.3" y1="116.84" x2="116.84" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="116.84" y1="116.84" x2="119.38" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="116.84" y1="119.38" x2="116.84" y2="116.84" width="0.1524" layer="91"/>
+<junction x="116.84" y="116.84"/>
 <pinref part="Q2" gate="G$1" pin="D"/>
 <pinref part="R5" gate="G$1" pin="2"/>
-<label x="132.08" y="119.38" size="1.27" layer="95" xref="yes"/>
+<label x="119.38" y="116.84" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="5V" class="0">
@@ -16032,12 +16048,12 @@ logo. Default layer for the logo on the board is tSilk.</description>
 <wire x1="185.42" y1="142.24" x2="185.42" y2="147.32" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<wire x1="129.54" y1="165.1" x2="129.54" y2="170.18" width="0.1524" layer="91"/>
+<wire x1="116.84" y1="162.56" x2="116.84" y2="167.64" width="0.1524" layer="91"/>
 <pinref part="R4" gate="G$1" pin="1"/>
 <pinref part="SUPPLY1" gate="G$1" pin="5V"/>
 </segment>
 <segment>
-<wire x1="129.54" y1="132.08" x2="129.54" y2="137.16" width="0.1524" layer="91"/>
+<wire x1="116.84" y1="129.54" x2="116.84" y2="134.62" width="0.1524" layer="91"/>
 <pinref part="R5" gate="G$1" pin="1"/>
 <pinref part="SUPPLY2" gate="G$1" pin="5V"/>
 </segment>
@@ -16182,6 +16198,21 @@ logo. Default layer for the logo on the board is tSilk.</description>
 <wire x1="180.34" y1="68.58" x2="180.34" y2="73.66" width="0.1524" layer="91"/>
 <pinref part="JP10-DNP" gate="G$1" pin="4"/>
 <pinref part="R16" gate="G$1" pin="1"/>
+</segment>
+</net>
+<net name="BATT_LVL" class="0">
+<segment>
+<wire x1="149.86" y1="160.02" x2="154.94" y2="160.02" width="0.1524" layer="91"/>
+<wire x1="154.94" y1="160.02" x2="154.94" y2="162.56" width="0.1524" layer="91"/>
+<wire x1="154.94" y1="160.02" x2="154.94" y2="154.94" width="0.1524" layer="91"/>
+<junction x="154.94" y="160.02"/>
+<pinref part="R8" gate="G$1" pin="2"/>
+<pinref part="R7" gate="G$1" pin="1"/>
+<label x="149.86" y="160.02" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="U1" gate="G$1" pin="A2"/>
+<wire x1="187.96" y1="165.1" x2="167.64" y2="165.1" width="0.1524" layer="91"/>
+<wire x1="167.64" y1="165.1" x2="167.64" y2="160.02" width="0.1524" layer="91"/>
+<wire x1="167.64" y1="160.02" x2="154.94" y2="160.02" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
