@@ -1516,24 +1516,24 @@ We've spent an enormous amount of time creating and checking these footprints an
 &lt;b&gt;Licensing:&lt;/b&gt; CC v3.0 Share-Alike You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
 <packages>
 <package name="LGA8">
-<description>&lt;h4&gt;LGA8 Package&lt;/h4&gt; &lt;B&gt;**UNPROVEN**&lt;/b&gt;
+<description>&lt;h4&gt;LGA8 Package&lt;/h4&gt;
 &lt;ul&gt;&lt;li&gt; 5.0x3.0x1.2mm&lt;/li&gt;
 &lt;li&gt;8-pad&lt;/li&gt;&lt;br&gt;&lt;/ul&gt;
 Used in MPL115A1 -</description>
-<wire x1="-1.5" y1="-2.5" x2="1.5" y2="-2.5" width="0.127" layer="21"/>
-<wire x1="1.5" y1="2.5" x2="-1.5" y2="2.5" width="0.127" layer="21"/>
-<wire x1="-1.5" y1="1.05" x2="-1.5" y2="1.45" width="0.127" layer="21"/>
-<wire x1="-1.5" y1="2.5" x2="-1.5" y2="2.3" width="0.127" layer="21"/>
-<wire x1="1.5" y1="2.5" x2="1.5" y2="2.3" width="0.127" layer="21"/>
-<wire x1="1.5" y1="1.05" x2="1.5" y2="1.45" width="0.127" layer="21"/>
-<wire x1="-1.5" y1="-0.2" x2="-1.5" y2="0.2" width="0.127" layer="21"/>
-<wire x1="-1.5" y1="-1.45" x2="-1.5" y2="-1.05" width="0.127" layer="21"/>
-<wire x1="-1.5" y1="-2.3" x2="-1.5" y2="-2.5" width="0.127" layer="21"/>
-<wire x1="1.5" y1="-0.2" x2="1.5" y2="0.2" width="0.127" layer="21"/>
-<wire x1="1.5" y1="-1.45" x2="1.5" y2="-1.05" width="0.127" layer="21"/>
-<wire x1="1.5" y1="-2.3" x2="1.5" y2="-2.5" width="0.127" layer="21"/>
+<wire x1="-1.5" y1="-2.5" x2="1.5" y2="-2.5" width="0.2032" layer="21"/>
+<wire x1="1.5" y1="2.5" x2="-1.5" y2="2.5" width="0.2032" layer="21"/>
+<wire x1="-1.5" y1="1.1" x2="-1.5" y2="1.4" width="0.2032" layer="21"/>
+<wire x1="-1.5" y1="2.5" x2="-1.5" y2="2.4" width="0.2032" layer="21"/>
+<wire x1="1.5" y1="2.5" x2="1.5" y2="2.4" width="0.2032" layer="21"/>
+<wire x1="1.5" y1="1.1" x2="1.5" y2="1.4" width="0.2032" layer="21"/>
+<wire x1="-1.5" y1="-0.1" x2="-1.5" y2="0.1" width="0.2032" layer="21"/>
+<wire x1="-1.5" y1="-1.4" x2="-1.5" y2="-1.1" width="0.2032" layer="21"/>
+<wire x1="-1.5" y1="-2.4" x2="-1.5" y2="-2.5" width="0.2032" layer="21"/>
+<wire x1="1.5" y1="-0.1" x2="1.5" y2="0.1" width="0.2032" layer="21"/>
+<wire x1="1.5" y1="-1.4" x2="1.5" y2="-1.1" width="0.2032" layer="21"/>
+<wire x1="1.5" y1="-2.4" x2="1.5" y2="-2.5" width="0.2032" layer="21"/>
 <circle x="0" y="-1.025" radius="0.7071" width="0.127" layer="51"/>
-<circle x="-0.38" y="2.14" radius="0.05" width="0.127" layer="21"/>
+<circle x="-0.26" y="2.01" radius="0.05" width="0.2032" layer="21"/>
 <smd name="1" x="-1.2" y="1.875" dx="1.2" dy="0.5" layer="1"/>
 <smd name="2" x="-1.2" y="0.625" dx="1.2" dy="0.5" layer="1"/>
 <smd name="3" x="-1.2" y="-0.625" dx="1.2" dy="0.5" layer="1"/>
@@ -1560,18 +1560,18 @@ Used in MPL115A1 -</description>
 <smd name="NC@1" x="-1.5" y="1" dx="0.5" dy="0.8" layer="1" rot="R270"/>
 <smd name="7" x="0" y="0" dx="0.2" dy="0.2" layer="1"/>
 <polygon width="0.127" layer="1">
-<vertex x="-0.75" y="1.25"/>
+<vertex x="-0.7" y="1.25"/>
 <vertex x="0.75" y="1.25"/>
-<vertex x="0.75" y="-0.75"/>
-<vertex x="0.25" y="-1.25"/>
-<vertex x="-0.75" y="-1.25"/>
+<vertex x="0.75" y="-0.8"/>
+<vertex x="0.3" y="-1.25"/>
+<vertex x="-0.7" y="-1.25"/>
 </polygon>
 <polygon width="0.127" layer="31">
-<vertex x="-0.55" y="1"/>
-<vertex x="0.55" y="1"/>
-<vertex x="0.55" y="-0.55"/>
-<vertex x="0.1" y="-1"/>
-<vertex x="-0.55" y="-1"/>
+<vertex x="-0.55" y="1.05"/>
+<vertex x="0.55" y="1.05"/>
+<vertex x="0.55" y="-0.65"/>
+<vertex x="0.1" y="-1.1"/>
+<vertex x="-0.55" y="-1.1"/>
 </polygon>
 <wire x1="-0.7" y1="-1.5" x2="0.7" y2="-1.5" width="0.2032" layer="21"/>
 <wire x1="-0.5" y1="1.2" x2="0.5" y2="1.2" width="0.127" layer="51"/>
@@ -1580,16 +1580,26 @@ Used in MPL115A1 -</description>
 <wire x1="-0.5" y1="0.5" x2="-0.5" y2="1.2" width="0.127" layer="51"/>
 </package>
 <package name="TEMT6000-SEN">
-<wire x1="2" y1="0.76" x2="2" y2="0.97" width="0.127" layer="21"/>
-<wire x1="2" y1="0.97" x2="-0.96" y2="0.97" width="0.127" layer="21"/>
-<wire x1="2" y1="-0.76" x2="2" y2="-0.99" width="0.127" layer="21"/>
-<wire x1="2" y1="-0.99" x2="-0.99" y2="-0.99" width="0.127" layer="21"/>
-<wire x1="-1.99" y1="-0.07" x2="-1.99" y2="0.08" width="0.127" layer="21"/>
+<wire x1="2" y1="0.76" x2="2" y2="0.97" width="0.2032" layer="21"/>
+<wire x1="2" y1="0.97" x2="-0.96" y2="0.97" width="0.2032" layer="21"/>
+<wire x1="2" y1="-0.76" x2="2" y2="-0.99" width="0.2032" layer="21"/>
+<wire x1="2" y1="-0.99" x2="-0.99" y2="-0.99" width="0.2032" layer="21"/>
+<wire x1="-2" y1="-0.05" x2="-2" y2="0.05" width="0.2032" layer="21"/>
 <smd name="EMITTER" x="-1.87" y="0.65" dx="1.1" dy="0.8" layer="1"/>
 <smd name="BASE" x="-1.87" y="-0.65" dx="1.1" dy="0.8" layer="1"/>
 <smd name="COLLECTOR" x="1.86" y="0.01" dx="1.1" dy="1" layer="1"/>
 <text x="-1.016" y="0.381" size="0.4064" layer="25">&gt;Name</text>
 <text x="-1.016" y="-0.762" size="0.4064" layer="27">&gt;Value</text>
+</package>
+<package name="ALS-PT19">
+<wire x1="-0.1" y1="0.2" x2="-0.1" y2="-0.2" width="0.2032" layer="21"/>
+<smd name="C" x="-0.75" y="0" dx="0.8" dy="0.8" layer="1"/>
+<smd name="E" x="0.75" y="0" dx="0.8" dy="0.8" layer="1"/>
+<text x="-0.762" y="0.8255" size="0.4064" layer="25">&gt;NAME</text>
+<text x="-1.016" y="-1.397" size="0.4064" layer="27">&gt;VALUE</text>
+<wire x1="-0.1" y1="0.2" x2="-0.2" y2="0.2" width="0.2032" layer="21"/>
+<wire x1="-0.2" y1="0.2" x2="-0.2" y2="-0.2" width="0.2032" layer="21"/>
+<wire x1="-0.1" y1="-0.2" x2="-0.2" y2="-0.2" width="0.2032" layer="21"/>
 </package>
 </packages>
 <symbols>
@@ -1624,6 +1634,34 @@ Used in MPL115A1 -</description>
 <pin name="GND@7" x="-10.16" y="-2.54" length="short" direction="pwr"/>
 </symbol>
 <symbol name="TEMT6000-SEN">
+<wire x1="2.54" y1="2.54" x2="0.508" y2="1.524" width="0.1524" layer="94"/>
+<wire x1="1.778" y1="-1.524" x2="2.54" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="1.27" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="1.27" y1="-2.54" x2="1.778" y2="-1.524" width="0.1524" layer="94"/>
+<wire x1="1.54" y1="-2.04" x2="0.308" y2="-1.424" width="0.1524" layer="94"/>
+<wire x1="1.524" y1="-2.413" x2="2.286" y2="-2.413" width="0.254" layer="94"/>
+<wire x1="2.286" y1="-2.413" x2="1.778" y2="-1.778" width="0.254" layer="94"/>
+<wire x1="1.778" y1="-1.778" x2="1.524" y2="-2.286" width="0.254" layer="94"/>
+<wire x1="1.524" y1="-2.286" x2="1.905" y2="-2.286" width="0.254" layer="94"/>
+<wire x1="1.905" y1="-2.286" x2="1.778" y2="-2.032" width="0.254" layer="94"/>
+<wire x1="-2.286" y1="1.016" x2="-1.524" y2="0" width="0.1524" layer="94"/>
+<wire x1="-1.524" y1="0" x2="-2.794" y2="0" width="0.1524" layer="94"/>
+<wire x1="-2.794" y1="0" x2="-2.286" y2="1.016" width="0.1524" layer="94"/>
+<wire x1="-2.524" y1="0.5" x2="-3.756" y2="1.116" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="0.127" x2="-1.778" y2="0.127" width="0.254" layer="94"/>
+<wire x1="-1.778" y1="0.127" x2="-2.286" y2="0.762" width="0.254" layer="94"/>
+<wire x1="-2.286" y1="0.762" x2="-2.54" y2="0.254" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="0.254" x2="-2.159" y2="0.254" width="0.254" layer="94"/>
+<wire x1="-2.159" y1="0.254" x2="-2.286" y2="0.508" width="0.254" layer="94"/>
+<wire x1="-3.81" y1="1.143" x2="-2.794" y2="1.143" width="0.1524" layer="94"/>
+<wire x1="-2.794" y1="1.143" x2="-4.191" y2="2.286" width="0.1524" layer="94"/>
+<text x="5.08" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
+<text x="5.08" y="2.54" size="1.778" layer="95">&gt;NAME</text>
+<rectangle x1="-0.254" y1="-2.54" x2="0.508" y2="2.54" layer="94"/>
+<pin name="E1" x="2.54" y="-5.08" visible="off" length="short" direction="pas" swaplevel="3" rot="R90"/>
+<pin name="C1" x="2.54" y="5.08" visible="off" length="short" direction="pas" swaplevel="2" rot="R270"/>
+</symbol>
+<symbol name="LIGHTSENSOR">
 <wire x1="2.54" y1="2.54" x2="0.508" y2="1.524" width="0.1524" layer="94"/>
 <wire x1="1.778" y1="-1.524" x2="2.54" y2="-2.54" width="0.1524" layer="94"/>
 <wire x1="2.54" y1="-2.54" x2="1.27" y2="-2.54" width="0.1524" layer="94"/>
@@ -1706,6 +1744,33 @@ Simple light detection sensor. Output varies with light intensity input. Spark F
 <connects>
 <connect gate="G$1" pin="C1" pad="COLLECTOR"/>
 <connect gate="G$1" pin="E1" pad="EMITTER"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="LIGHTSENSOR" prefix="U">
+<description>&lt;b&gt;Ambient Light Sensor&lt;/b&gt;
+Simple light detection sensor. Output varies with light intensity input. Spark Fun Electronics SKU : COM-08348</description>
+<gates>
+<gate name="G$1" symbol="LIGHTSENSOR" x="0" y="0"/>
+</gates>
+<devices>
+<device name="TEMT6000" package="TEMT6000-SEN">
+<connects>
+<connect gate="G$1" pin="C1" pad="COLLECTOR"/>
+<connect gate="G$1" pin="E1" pad="EMITTER"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="ALS" package="ALS-PT19">
+<connects>
+<connect gate="G$1" pin="C1" pad="C"/>
+<connect gate="G$1" pin="E1" pad="E"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -19701,6 +19766,7 @@ logo. Default layer for the logo on the board is tSilk.</description>
 <part name="R9" library="SparkFun" deviceset="RESISTOR" device="0603-RES" value="4.7K"/>
 <part name="JP2" library="SparkFun-Connectors" deviceset="M02" device="PTH"/>
 <part name="GND5" library="SparkFun" deviceset="GND" device=""/>
+<part name="U3" library="SparkFun-Sensors" deviceset="LIGHTSENSOR" device="ALS" value="ALS-PT19"/>
 </parts>
 <sheets>
 <sheet>
@@ -19768,7 +19834,7 @@ logo. Default layer for the logo on the board is tSilk.</description>
 <instance part="GND19" gate="1" x="20.32" y="63.5"/>
 <instance part="P+10" gate="1" x="20.32" y="78.74"/>
 <instance part="P+13" gate="1" x="33.02" y="121.92"/>
-<instance part="P+14" gate="1" x="104.14" y="40.64"/>
+<instance part="P+14" gate="1" x="104.14" y="43.18"/>
 <instance part="GND20" gate="1" x="104.14" y="7.62"/>
 <instance part="S2" gate="G$1" x="25.4" y="17.78" rot="MR0"/>
 <instance part="GND13" gate="1" x="53.34" y="12.7"/>
@@ -19865,6 +19931,7 @@ logo. Default layer for the logo on the board is tSilk.</description>
 <instance part="R9" gate="G$1" x="27.94" y="45.72" rot="MR180"/>
 <instance part="JP2" gate="G$1" x="12.7" y="35.56"/>
 <instance part="GND5" gate="1" x="22.86" y="30.48"/>
+<instance part="U3" gate="G$1" x="119.38" y="33.02"/>
 </instances>
 <busses>
 </busses>
@@ -20148,7 +20215,12 @@ logo. Default layer for the logo on the board is tSilk.</description>
 <segment>
 <pinref part="U8" gate="G$1" pin="C1"/>
 <pinref part="P+14" gate="1" pin="VCC"/>
+<wire x1="104.14" y1="43.18" x2="104.14" y2="40.64" width="0.1524" layer="91"/>
+<pinref part="U3" gate="G$1" pin="C1"/>
 <wire x1="104.14" y1="40.64" x2="104.14" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="104.14" y1="40.64" x2="121.92" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="121.92" y1="40.64" x2="121.92" y2="38.1" width="0.1524" layer="91"/>
+<junction x="104.14" y="40.64"/>
 </segment>
 <segment>
 <pinref part="U7" gate="G$1" pin="5"/>
@@ -20273,6 +20345,9 @@ logo. Default layer for the logo on the board is tSilk.</description>
 <wire x1="104.14" y1="25.4" x2="93.98" y2="25.4" width="0.1524" layer="91"/>
 <junction x="104.14" y="25.4"/>
 <label x="93.98" y="25.4" size="1.778" layer="95"/>
+<pinref part="U3" gate="G$1" pin="E1"/>
+<wire x1="121.92" y1="27.94" x2="121.92" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="121.92" y1="25.4" x2="104.14" y2="25.4" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="A1"/>
