@@ -22,10 +22,12 @@
 #include "MPL3115A2.h" //Pressure sensor
 #include "HTU21D.h" //Humidity sensor
 #include <SoftwareSerial.h> //Needed for GPS
-#include <TinyGPS.h> //GPS parsing
+#include <TinyGPS++.h> //GPS parsing
 
-TinyGPS gps;
-SoftwareSerial ss(5, 4); //GPS is attached to pin 5(TX from GPS) and pin 4(RX into GPS)
+TinyGPSPlus gps;
+
+static const int RXPin = 5, TXPin = 4; //GPS is attached to pin 4(TX from GPS) and pin 5(RX into GPS)
+SoftwareSerial ss(RXPin, TXPin); 
 
 MPL3115A2 myPressure; //Create an instance of the pressure sensor
 HTU21D myHumidity; //Create an instance of the humidity sensor
@@ -37,6 +39,7 @@ const byte WSPEED = 3;
 const byte RAIN = 2;
 const byte STAT1 = 7;
 const byte STAT2 = 8;
+const byte GPS_PWRCTL = 6; //Pulling this pin low puts GPS to sleep but maintains RTC and RAM
 
 // analog I/O pins
 const byte REFERENCE_3V3 = A3;
@@ -92,10 +95,10 @@ float batt_lvl = 11.8; //[analog value from 0 to 1023]
 float light_lvl = 455; //[analog value from 0 to 1023]
 
 //Variables used for GPS
-float flat, flon; // 39.015024 -102.283608686
-unsigned long age;
-int year;
-byte month, day, hour, minute, second, hundredths;
+//float flat, flon; // 39.015024 -102.283608686
+//unsigned long age;
+//int year;
+//byte month, day, hour, minute, second, hundredths;
 
 // volatiles are subject to modification by IRQs
 volatile unsigned long raintime, rainlast, raininterval, rain;
@@ -140,6 +143,9 @@ void setup()
 
   pinMode(STAT1, OUTPUT); //Status LED Blue
   pinMode(STAT2, OUTPUT); //Status LED Green
+  
+  pinMode(GPS_PWRCTL, OUTPUT);
+  digitalWrite(GPS_PWRCTL, HIGH); //Pulling this pin low puts GPS to sleep but maintains RTC and RAM
   
   pinMode(WSPEED, INPUT_PULLUP); // input from wind meters windspeed sensor
   pinMode(RAIN, INPUT_PULLUP); // input from wind meters rain gauge sensor
@@ -204,17 +210,6 @@ void loop()
       windgustdir = currentDirection;
     }
     
-    //Check if there is new GPS data
-    /*gps.f_get_position(&flat, &flon, &age);
-    Serial.print("LAT=");
-    Serial.print(flat == TinyGPS::GPS_INVALID_F_ANGLE ? 0.0 : flat, 6);
-    Serial.print(" LON=");
-    Serial.print(flon == TinyGPS::GPS_INVALID_F_ANGLE ? 0.0 : flon, 6);
-    Serial.print(" SAT=");
-    Serial.print(gps.satellites() == TinyGPS::GPS_INVALID_SATELLITES ? 0 : gps.satellites());
-    Serial.print(" PREC=");
-    Serial.print(gps.hdop() == TinyGPS::GPS_INVALID_HDOP ? 0 : gps.hdop());*/
-
     if(++seconds > 59)
     {
       seconds = 0;
@@ -318,12 +313,6 @@ void calcWeather()
 
   //Calc battery level
   batt_lvl = get_battery_level();
-  
-  //Calc GPS position
-  gps.f_get_position(&flat, &flon, &age);
-  
-  //Calc GPS time
-  gps.crack_datetime(&year, &month, &day, &hour, &minute, &second, &hundredths, &age);
   
 }
 
@@ -452,18 +441,21 @@ void printWeather()
   Serial.print(light_lvl, 2);
 
   Serial.print(",lat=");
-  Serial.print(flat, 6);
+  Serial.print(gps.location.lat(), 6);
   Serial.print(",lat=");
-  Serial.print(flon, 6);
+  Serial.print(gps.location.lng(), 6);
   Serial.print(",altitude=");
-  Serial.print(gps.f_altitude());
+  Serial.print(gps.altitude.meters());
   Serial.print(",sats=");
-  Serial.print(gps.satellites());
+  Serial.print(gps.satellites.value());
 
   char sz[32];
+  Serial.print(",date=");
+  sprintf(sz, "%02d/%02d/%02d", gps.date.month(), gps.date.day(), gps.date.year());
+  Serial.print(sz);
+
   Serial.print(",time=");
-  sprintf(sz, "%02d/%02d/%02d %02d:%02d:%02d",
-      month, day, year, hour, minute, second);
+  sprintf(sz, "%02d:%02d:%02d", gps.time.hour(), gps.time.minute(), gps.time.second());
   Serial.print(sz);
 
   Serial.print(",");
