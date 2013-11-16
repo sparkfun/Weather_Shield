@@ -14,13 +14,18 @@
  Measurements are reported once a second but windspeed and rain gauge are tied to interrupts that are
  calcualted at each report.
  
- This example code assumes the GPS module is not used.
+ This example code assumes the GP-635T GPS module is attached.
  
  */
 
 #include <Wire.h> //I2C needed for sensors
 #include "MPL3115A2.h" //Pressure sensor
 #include "HTU21D.h" //Humidity sensor
+#include <SoftwareSerial.h> //Needed for GPS
+#include <TinyGPS.h> //GPS parsing
+
+TinyGPS gps;
+SoftwareSerial ss(5, 4); //GPS is attached to pin 5(TX from GPS) and pin 4(RX into GPS)
 
 MPL3115A2 myPressure; //Create an instance of the pressure sensor
 HTU21D myHumidity; //Create an instance of the humidity sensor
@@ -86,6 +91,12 @@ float pressure = 0;
 float batt_lvl = 11.8; //[analog value from 0 to 1023]
 float light_lvl = 455; //[analog value from 0 to 1023]
 
+//Variables used for GPS
+float flat, flon; // 39.015024 -102.283608686
+unsigned long age;
+int year;
+byte month, day, hour, minute, second, hundredths;
+
 // volatiles are subject to modification by IRQs
 volatile unsigned long raintime, rainlast, raininterval, rain;
 
@@ -124,6 +135,8 @@ void setup()
 {
   Serial.begin(9600);
   Serial.println("Weather Shield Example");
+
+  ss.begin(9600); //Begin listening to GPS over software serial at 9600. This should be the default baud of the module.
 
   pinMode(STAT1, OUTPUT); //Status LED Blue
   pinMode(STAT2, OUTPUT); //Status LED Green
@@ -190,6 +203,17 @@ void loop()
       windgustmph = currentSpeed;
       windgustdir = currentDirection;
     }
+    
+    //Check if there is new GPS data
+    /*gps.f_get_position(&flat, &flon, &age);
+    Serial.print("LAT=");
+    Serial.print(flat == TinyGPS::GPS_INVALID_F_ANGLE ? 0.0 : flat, 6);
+    Serial.print(" LON=");
+    Serial.print(flon == TinyGPS::GPS_INVALID_F_ANGLE ? 0.0 : flon, 6);
+    Serial.print(" SAT=");
+    Serial.print(gps.satellites() == TinyGPS::GPS_INVALID_SATELLITES ? 0 : gps.satellites());
+    Serial.print(" PREC=");
+    Serial.print(gps.hdop() == TinyGPS::GPS_INVALID_HDOP ? 0 : gps.hdop());*/
 
     if(++seconds > 59)
     {
@@ -208,8 +232,20 @@ void loop()
     digitalWrite(STAT1, LOW); //Turn off stat LED
   }
 
-  delay(100);
+  smartdelay(800); //Wait 1 second, and gather GPS data
 }
+
+//While we delay for a given amount of time, gather GPS data
+static void smartdelay(unsigned long ms)
+{
+  unsigned long start = millis();
+  do 
+  {
+    while (ss.available())
+      gps.encode(ss.read());
+  } while (millis() - start < ms);
+}
+
 
 //Calculates each of the variables that wunderground is expecting
 void calcWeather()
@@ -282,6 +318,13 @@ void calcWeather()
 
   //Calc battery level
   batt_lvl = get_battery_level();
+  
+  //Calc GPS position
+  gps.f_get_position(&flat, &flon, &age);
+  
+  //Calc GPS time
+  gps.crack_datetime(&year, &month, &day, &hour, &minute, &second, &hundredths, &age);
+  
 }
 
 //Returns the voltage of the light sensor based on the 3.3V rail
@@ -381,7 +424,7 @@ void printWeather()
   Serial.print(winddir);
   Serial.print(",windspeedmph=");
   Serial.print(windspeedmph, 1);
-  Serial.print(",windgustmph=");
+  /*Serial.print(",windgustmph=");
   Serial.print(windgustmph, 1);
   Serial.print(",windgustdir=");
   Serial.print(windgustdir);
@@ -392,7 +435,7 @@ void printWeather()
   Serial.print(",windgustmph_10m=");
   Serial.print(windgustmph_10m, 1);
   Serial.print(",windgustdir_10m=");
-  Serial.print(windgustdir_10m);
+  Serial.print(windgustdir_10m);*/
   Serial.print(",humidity=");
   Serial.print(humidity, 1);
   Serial.print(",tempf=");
@@ -407,6 +450,22 @@ void printWeather()
   Serial.print(batt_lvl, 2);
   Serial.print(",light_lvl=");
   Serial.print(light_lvl, 2);
+
+  Serial.print(",lat=");
+  Serial.print(flat, 6);
+  Serial.print(",lat=");
+  Serial.print(flon, 6);
+  Serial.print(",altitude=");
+  Serial.print(gps.f_altitude());
+  Serial.print(",sats=");
+  Serial.print(gps.satellites());
+
+  char sz[32];
+  Serial.print(",time=");
+  sprintf(sz, "%02d/%02d/%02d %02d:%02d:%02d",
+      month, day, year, hour, minute, second);
+  Serial.print(sz);
+
   Serial.print(",");
   Serial.println("#");
 
