@@ -8,6 +8,8 @@ Weather Shield is an Arduino shield that gathers relative humidity, barometric p
 
 Weather Shield is an open source hardware project.
 
+**NOTE**: You will need to install additional libraries to work with the example sketch for this board. Please check the [MPL3115A2 Breakout Repo](https://github.com/sparkfun/MPL3115A2_Breakout) and the [HTU21D Breakout Repo](https://github.com/sparkfun/HTU21D_Breakout) for the required libraries.  
+
 Repository Contents
 ------------------
 
