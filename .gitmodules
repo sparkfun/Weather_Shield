@@ -1,0 +1,9 @@
+[submodule "MPL3115A2_Breakout"]
+	path = MPL3115A2_Breakout
+	url = https://github.com/sparkfun/MPL3115A2_Breakout
+[submodule "HTU21D_Breakout"]
+	path = HTU21D_Breakout
+	url = https://github.com/sparkfun/HTU21D_Breakout
+[submodule "TinyGPSPlus"]
+	path = TinyGPSPlus
+	url = https://github.com/mikalhart/TinyGPSPlus
