@@ -189,7 +189,6 @@ void loop()
 		//Check to see if this is a gust for the day
 		if(currentSpeed > windgustmph)
 		{
-			Serial.print("Gust!!");
 			windgustmph = currentSpeed;
 			windgustdir = currentDirection;
 		}
