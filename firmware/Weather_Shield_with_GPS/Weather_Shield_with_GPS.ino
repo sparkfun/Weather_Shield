@@ -19,10 +19,10 @@
  */
 
 #include <Wire.h> //I2C needed for sensors
-#include "SparkFunMPL3115A2.h" //Pressure sensor
-#include "SparkFunHTU21D.h" //Humidity sensor
+#include "SparkFunMPL3115A2.h" //Pressure sensor - Search "SparkFun MPL3115" and install from Library Manager
+#include "SparkFunHTU21D.h" //Humidity sensor - Search "SparkFun HTU21D" and install from Library Manager
 #include <SoftwareSerial.h> //Needed for GPS
-#include <TinyGPS++.h> //GPS parsing
+#include <TinyGPS++.h> //GPS parsing - Available through the Library Manager.
 
 TinyGPSPlus gps;
 

@@ -27,20 +27,10 @@ const byte STAT_GREEN = 8;
 const byte REFERENCE_3V3 = A3;
 const byte LIGHT = A1;
 const byte BATT = A2;
-//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 //Global Variables
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 long lastSecond; //The millis counter to see when a second rolls by
-
-float tempf = 0; // [temperature F]
-//float baromin = 30.03;// [barom in] - It's hard to calculate baromin locally, do this in the agent
-//float dewptf; // [dewpoint F] - It's hard to calculate dewpoint locally, do this in the agent
-
-float batt_lvl = 11.8; //[analog value from 0 to 1023]
-float light_lvl = 455; //[analog value from 0 to 1023]
-
-//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 void setup()
 {
@@ -119,7 +109,7 @@ void loop()
       Serial.print("V,");
 
       //Check batt level
-      batt_lvl = get_battery_level();
+      float batt_lvl = get_battery_level();
       Serial.print(" VinPin = ");
       Serial.print(batt_lvl);
       Serial.print("V");
