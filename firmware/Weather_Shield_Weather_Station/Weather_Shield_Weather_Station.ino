@@ -7,6 +7,9 @@
 
  Much of this is based on Mike Grusin's USB Weather Board code: https://www.sparkfun.com/products/10586
 
+ This is a more advanced example of how to utilize every aspect of the weather shield. See the basic
+ example if you're just getting started.
+ 
  This code reads all the various sensors (wind speed, direction, rain gauge, humidty, pressure, light, batt_lvl)
  and reports it over the serial comm port. This can be easily routed to an datalogger (such as OpenLog) or
  a wireless transmitter (such as Electric Imp).
