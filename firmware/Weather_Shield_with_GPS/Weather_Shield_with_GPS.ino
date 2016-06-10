@@ -249,7 +249,7 @@ void calcWeather()
   winddir = get_wind_direction();
 
   //Calc windspeed
-  windspeedmph = get_wind_speed();
+  //windspeedmph = get_wind_speed(); //This is calculated in the main loop
 
   //Calc windgustmph
   //Calc windgustdir
