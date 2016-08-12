@@ -176,7 +176,7 @@ void loop()
 
 		//Calc the wind speed and direction every second for 120 second to get 2 minute average
 		float currentSpeed = get_wind_speed();
-    windspeedmph = currentSpeed;//update global variable for windspeed when using the printWeather() function
+		windspeedmph = currentSpeed; //update global variable for windspeed when using the printWeather() function
 		//float currentSpeed = random(5); //For testing
 		int currentDirection = get_wind_direction();
 		windspdavg[seconds_2m] = (int)currentSpeed;
