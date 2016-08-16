@@ -442,7 +442,7 @@ void printWeather()
 
   Serial.print(",lat=");
   Serial.print(gps.location.lat(), 6);
-  Serial.print(",lat=");
+  Serial.print(",lng=");
   Serial.print(gps.location.lng(), 6);
   Serial.print(",altitude=");
   Serial.print(gps.altitude.meters());
