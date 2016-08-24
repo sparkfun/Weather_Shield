@@ -20614,8 +20614,6 @@ Batt Bckup</text>
 <text x="33.02" y="5.08" size="1.778" layer="97" ratio="12">Digital Pins 4 and 5 are used for 
 software serial with switch is set
 to "Soft".</text>
-<text x="0" y="213.36" size="3.81" layer="91">Customer/Comment complaints and suggested changes</text>
-<text x="0" y="205.74" size="3.81" layer="91">Rain gauges share same pins as XBee shield</text>
 <text x="171.704" y="6.858" size="2.54" layer="94">Joel Bartlett</text>
 <text x="27.94" y="142.24" size="1.778" layer="97">Input Voltage Range: 5-12V</text>
 </plain>
@@ -20723,14 +20721,14 @@ to "Soft".</text>
 <attribute name="VALUE" x="196.85" y="80.645" size="1.778" layer="96"/>
 </instance>
 <instance part="D9" gate="G$1" x="210.82" y="83.82" rot="R90"/>
-<instance part="D10" gate="G$1" x="210.82" y="63.5" rot="R90"/>
+<instance part="D10" gate="G$1" x="213.36" y="63.5" rot="R90"/>
 <instance part="D7" gate="G$1" x="205.74" y="83.82" rot="R90"/>
-<instance part="D8" gate="G$1" x="205.74" y="63.5" rot="R90"/>
+<instance part="D8" gate="G$1" x="203.2" y="63.5" rot="R90"/>
 <instance part="D5" gate="G$1" x="134.62" y="81.28" rot="R90"/>
-<instance part="D6" gate="G$1" x="134.62" y="60.96" rot="R90"/>
-<instance part="GND21" gate="1" x="210.82" y="53.34" rot="MR0"/>
-<instance part="GND29" gate="1" x="205.74" y="53.34"/>
-<instance part="GND31" gate="1" x="134.62" y="50.8" rot="MR0"/>
+<instance part="D6" gate="G$1" x="137.16" y="60.96" rot="R90"/>
+<instance part="GND21" gate="1" x="213.36" y="53.34" rot="MR0"/>
+<instance part="GND29" gate="1" x="203.2" y="53.34"/>
+<instance part="GND31" gate="1" x="137.16" y="50.8" rot="MR0"/>
 <instance part="R12" gate="G$1" x="119.38" y="60.96" smashed="yes" rot="R270">
 <attribute name="NAME" x="117.475" y="55.88" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="117.475" y="62.865" size="1.778" layer="96" rot="R90"/>
@@ -20748,9 +20746,9 @@ to "Soft".</text>
 <instance part="SUPPLY7" gate="G$1" x="220.98" y="93.98"/>
 <instance part="SUPPLY10" gate="G$1" x="134.62" y="91.44"/>
 <instance part="LOGO2" gate="G$1" x="187.96" y="35.56"/>
-<instance part="R7" gate="G$1" x="162.56" y="149.86" rot="MR270"/>
+<instance part="R7" gate="G$1" x="165.1" y="149.86" rot="MR270"/>
 <instance part="R8" gate="G$1" x="162.56" y="167.64" rot="MR270"/>
-<instance part="GND28" gate="1" x="162.56" y="139.7"/>
+<instance part="GND28" gate="1" x="165.1" y="139.7"/>
 <instance part="LOGO1" gate="G$1" x="134.62" y="10.16"/>
 <instance part="R9" gate="G$1" x="30.48" y="50.8" rot="MR180"/>
 <instance part="JP2" gate="G$1" x="15.24" y="40.64" smashed="yes">
@@ -20863,17 +20861,17 @@ to "Soft".</text>
 <junction x="185.42" y="132.08"/>
 </segment>
 <segment>
-<wire x1="210.82" y1="55.88" x2="210.82" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="213.36" y1="55.88" x2="213.36" y2="60.96" width="0.1524" layer="91"/>
 <pinref part="GND21" gate="1" pin="GND"/>
 <pinref part="D10" gate="G$1" pin="A"/>
 </segment>
 <segment>
-<wire x1="205.74" y1="55.88" x2="205.74" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="203.2" y1="55.88" x2="203.2" y2="60.96" width="0.1524" layer="91"/>
 <pinref part="GND29" gate="1" pin="GND"/>
 <pinref part="D8" gate="G$1" pin="A"/>
 </segment>
 <segment>
-<wire x1="134.62" y1="53.34" x2="134.62" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="137.16" y1="53.34" x2="137.16" y2="58.42" width="0.1524" layer="91"/>
 <pinref part="GND31" gate="1" pin="GND"/>
 <pinref part="D6" gate="G$1" pin="A"/>
 </segment>
@@ -20893,7 +20891,7 @@ to "Soft".</text>
 <pinref part="R12" gate="G$1" pin="2"/>
 </segment>
 <segment>
-<wire x1="162.56" y1="142.24" x2="162.56" y2="144.78" width="0.1524" layer="91"/>
+<wire x1="165.1" y1="142.24" x2="165.1" y2="144.78" width="0.1524" layer="91"/>
 <pinref part="R7" gate="G$1" pin="2"/>
 <pinref part="GND28" gate="1" pin="GND"/>
 </segment>
@@ -21293,14 +21291,16 @@ to "Soft".</text>
 <net name="RAIN" class="0">
 <segment>
 <wire x1="132.08" y1="73.66" x2="134.62" y2="73.66" width="0.1524" layer="91"/>
-<wire x1="134.62" y1="73.66" x2="139.7" y2="73.66" width="0.1524" layer="91"/>
-<wire x1="134.62" y1="63.5" x2="134.62" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="73.66" x2="137.16" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="137.16" y1="73.66" x2="139.7" y2="73.66" width="0.1524" layer="91"/>
 <wire x1="134.62" y1="73.66" x2="134.62" y2="78.74" width="0.1524" layer="91"/>
 <junction x="134.62" y="73.66"/>
 <pinref part="R11" gate="G$1" pin="1"/>
-<pinref part="D6" gate="G$1" pin="C"/>
 <pinref part="D5" gate="G$1" pin="A"/>
 <label x="139.7" y="73.66" size="1.27" layer="95" xref="yes"/>
+<pinref part="D6" gate="G$1" pin="C"/>
+<wire x1="137.16" y1="63.5" x2="137.16" y2="73.66" width="0.1524" layer="91"/>
+<junction x="137.16" y="73.66"/>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="D2"/>
@@ -21311,14 +21311,16 @@ to "Soft".</text>
 <net name="WSPEED" class="0">
 <segment>
 <wire x1="200.66" y1="76.2" x2="210.82" y2="76.2" width="0.1524" layer="91"/>
-<wire x1="210.82" y1="76.2" x2="226.06" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="210.82" y1="76.2" x2="213.36" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="213.36" y1="76.2" x2="226.06" y2="76.2" width="0.1524" layer="91"/>
 <wire x1="210.82" y1="81.28" x2="210.82" y2="76.2" width="0.1524" layer="91"/>
-<wire x1="210.82" y1="76.2" x2="210.82" y2="66.04" width="0.1524" layer="91"/>
 <junction x="210.82" y="76.2"/>
 <pinref part="R14" gate="G$1" pin="1"/>
 <pinref part="D9" gate="G$1" pin="A"/>
-<pinref part="D10" gate="G$1" pin="C"/>
 <label x="226.06" y="76.2" size="1.27" layer="95" xref="yes"/>
+<pinref part="D10" gate="G$1" pin="C"/>
+<wire x1="213.36" y1="66.04" x2="213.36" y2="76.2" width="0.1524" layer="91"/>
+<junction x="213.36" y="76.2"/>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="*D3"/>
@@ -21328,19 +21330,21 @@ to "Soft".</text>
 </net>
 <net name="WDIR" class="0">
 <segment>
-<wire x1="200.66" y1="78.74" x2="205.74" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="200.66" y1="78.74" x2="203.2" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="203.2" y1="78.74" x2="205.74" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="205.74" y1="78.74" x2="220.98" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="220.98" y1="78.74" x2="226.06" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="220.98" y1="81.28" x2="220.98" y2="78.74" width="0.1524" layer="91"/>
-<wire x1="205.74" y1="66.04" x2="205.74" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="205.74" y1="81.28" x2="205.74" y2="78.74" width="0.1524" layer="91"/>
 <junction x="220.98" y="78.74"/>
 <junction x="205.74" y="78.74"/>
 <pinref part="R17" gate="G$1" pin="2"/>
 <pinref part="R13" gate="G$1" pin="1"/>
-<pinref part="D8" gate="G$1" pin="C"/>
 <pinref part="D7" gate="G$1" pin="A"/>
 <label x="226.06" y="78.74" size="1.27" layer="95" xref="yes"/>
+<pinref part="D8" gate="G$1" pin="C"/>
+<wire x1="203.2" y1="66.04" x2="203.2" y2="78.74" width="0.1524" layer="91"/>
+<junction x="203.2" y="78.74"/>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="A0"/>
@@ -21411,15 +21415,17 @@ to "Soft".</text>
 <segment>
 <wire x1="157.48" y1="160.02" x2="162.56" y2="160.02" width="0.1524" layer="91"/>
 <wire x1="162.56" y1="160.02" x2="162.56" y2="162.56" width="0.1524" layer="91"/>
-<wire x1="162.56" y1="160.02" x2="162.56" y2="154.94" width="0.1524" layer="91"/>
 <junction x="162.56" y="160.02"/>
 <pinref part="R8" gate="G$1" pin="2"/>
-<pinref part="R7" gate="G$1" pin="1"/>
 <label x="157.48" y="160.02" size="1.27" layer="95" rot="R180" xref="yes"/>
 <pinref part="U1" gate="G$1" pin="A2"/>
 <wire x1="187.96" y1="165.1" x2="167.64" y2="165.1" width="0.1524" layer="91"/>
 <wire x1="167.64" y1="165.1" x2="167.64" y2="160.02" width="0.1524" layer="91"/>
-<wire x1="167.64" y1="160.02" x2="162.56" y2="160.02" width="0.1524" layer="91"/>
+<wire x1="167.64" y1="160.02" x2="165.1" y2="160.02" width="0.1524" layer="91"/>
+<pinref part="R7" gate="G$1" pin="1"/>
+<wire x1="165.1" y1="160.02" x2="162.56" y2="160.02" width="0.1524" layer="91"/>
+<wire x1="165.1" y1="154.94" x2="165.1" y2="160.02" width="0.1524" layer="91"/>
+<junction x="165.1" y="160.02"/>
 </segment>
 </net>
 <net name="3V_PWR_CTL" class="0">
