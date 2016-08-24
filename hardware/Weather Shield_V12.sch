@@ -2158,15 +2158,16 @@ will be further integrated into the Sparkfun Library for other footprints.  It c
 <package name="1X02_POKEHOME">
 <description>2 pin poke-home connector
 
-part number 2072-2P from STA</description>
-<wire x1="-7.6" y1="-5.85" x2="-7.6" y2="5.85" width="0.2032" layer="21"/>
-<wire x1="-7.6" y1="5.85" x2="7.6" y2="5.85" width="0.2032" layer="21"/>
-<wire x1="7.6" y1="5.85" x2="7.6" y2="-5.85" width="0.2032" layer="21"/>
-<wire x1="7.6" y1="-5.85" x2="-7.6" y2="-5.85" width="0.2032" layer="21"/>
-<smd name="P2" x="7.2" y="-3" dx="2.6" dy="1.8" layer="1"/>
-<smd name="P1" x="7.2" y="3" dx="2.6" dy="1.8" layer="1"/>
-<smd name="P4" x="-4.5" y="-3" dx="7.4" dy="1.8" layer="1"/>
-<smd name="P3" x="-4.5" y="3" dx="7.4" dy="1.8" layer="1"/>
+part number 2062-2P from STA</description>
+<wire x1="-7" y1="-4" x2="-7" y2="2" width="0.2032" layer="21"/>
+<wire x1="-7" y1="2" x2="-7" y2="4" width="0.2032" layer="21"/>
+<wire x1="4.7" y1="4" x2="4.7" y2="-4" width="0.2032" layer="21"/>
+<wire x1="4.7" y1="-4" x2="-7" y2="-4" width="0.2032" layer="21"/>
+<smd name="P2" x="5.25" y="-2" dx="3.5" dy="2" layer="1"/>
+<smd name="P1" x="5.25" y="2" dx="3.5" dy="2" layer="1"/>
+<smd name="P4" x="-4" y="-2" dx="6" dy="2" layer="1"/>
+<smd name="P3" x="-4" y="2" dx="6" dy="2" layer="1"/>
+<wire x1="-7" y1="4" x2="4.7" y2="4" width="0.2032" layer="21"/>
 </package>
 </packages>
 <symbols>
@@ -2423,14 +2424,14 @@ part number 2072-2P from STA</description>
 <technology name=""/>
 </technologies>
 </device>
-<device name="POKEHOME" package="1X02_POKEHOME">
+<device name="SMALL_POKEHOME" package="1X02_POKEHOME">
 <connects>
 <connect gate="G$1" pin="1" pad="P1 P3"/>
 <connect gate="G$1" pin="2" pad="P2 P4"/>
 </connects>
 <technologies>
 <technology name="">
-<attribute name="PROD_ID" value="CONN-?????"/>
+<attribute name="PROD_ID" value="CONN-#####" constant="no"/>
 </technology>
 </technologies>
 </device>
