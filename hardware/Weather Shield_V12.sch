@@ -317,7 +317,6 @@ Used in MPL115A1 -</description>
 <wire x1="-1.4986" y1="1.397" x2="-1.4986" y2="1.4986" width="0.127" layer="21"/>
 <wire x1="-1.4986" y1="1.4986" x2="1.4986" y2="1.4986" width="0.127" layer="21"/>
 <wire x1="1.4986" y1="1.4986" x2="1.4986" y2="1.397" width="0.127" layer="21"/>
-<smd name="7" x="0" y="0" dx="0.2" dy="0.2" layer="1"/>
 <polygon width="0.127" layer="1">
 <vertex x="-0.7" y="1.25"/>
 <vertex x="0.75" y="1.25"/>
@@ -325,7 +324,7 @@ Used in MPL115A1 -</description>
 <vertex x="0.3" y="-1.25"/>
 <vertex x="-0.7" y="-1.25"/>
 </polygon>
-<polygon width="0.127" layer="29">
+<polygon width="0.127" layer="31">
 <vertex x="-0.55" y="1.05"/>
 <vertex x="0.55" y="1.05"/>
 <vertex x="0.55" y="-0.65"/>
@@ -19931,7 +19930,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <text x="40.64" y="60.96" size="1.778" layer="97" font="vector">Read Address:</text>
 <text x="40.64" y="58.42" size="1.778" layer="97" font="vector">Write Address:</text>
 <text x="40.64" y="63.5" size="1.778" layer="97" font="vector">7-bit I2C Address:</text>
-<text x="63.5" y="63.5" size="1.778" layer="97" font="vector">0x60</text>
+<text x="68.58" y="63.5" size="1.778" layer="97" font="vector">0x60</text>
 <text x="63.5" y="60.96" size="1.778" layer="97" font="vector">0xC1</text>
 <text x="63.5" y="58.42" size="1.778" layer="97" font="vector">0xC0</text>
 <text x="38.1" y="104.14" size="1.778" layer="97" font="vector">7-bit I2C Address is 0x40</text>
@@ -19957,7 +19956,7 @@ Batt Bckup</text>
 <text x="44.958" y="50.038" size="2.032" layer="102" font="vector">GPS (optional)</text>
 <text x="80.772" y="51.308" size="2.032" layer="102" font="vector">Light</text>
 <text x="238.76" y="7.62" size="1.778" layer="94" font="vector" ratio="12">V1.2</text>
-<text x="27.94" y="2.54" size="1.778" layer="97" font="vector" ratio="12">Digital Pins 4 and 5 are used for 
+<text x="27.94" y="2.54" size="1.778" layer="97" font="vector">Digital Pins 4 and 5 are used for 
 software serial with switch is set
 to "Soft".</text>
 <text x="171.704" y="6.858" size="2.54" layer="94" font="vector">Joel Bartlett</text>
