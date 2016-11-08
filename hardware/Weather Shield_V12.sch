@@ -331,6 +331,13 @@ Used in MPL115A1 -</description>
 <vertex x="0.1" y="-1.1"/>
 <vertex x="-0.55" y="-1.1"/>
 </polygon>
+<polygon width="0.127" layer="29">
+<vertex x="-0.775" y="1.325"/>
+<vertex x="-0.775" y="-1.3"/>
+<vertex x="0.375" y="-1.3"/>
+<vertex x="0.825" y="-0.85"/>
+<vertex x="0.825" y="1.325"/>
+</polygon>
 </package>
 </packages>
 <symbols>
