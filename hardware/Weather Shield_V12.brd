@@ -156,7 +156,7 @@
 <plain>
 <wire x1="53.34" y1="2.54" x2="53.34" y2="57.15" width="0.2032" layer="20"/>
 <wire x1="0" y1="57.15" x2="0" y2="2.54" width="0.2032" layer="20"/>
-<text x="21.463" y="9.525" size="1.524" layer="21" font="vector" ratio="15">Weather Shield</text>
+<text x="18.034" y="9.652" size="1.524" layer="21" font="vector" ratio="15">Weather Shield</text>
 <text x="22.86" y="-24.13" size="1.778" layer="51" font="vector" ratio="15">N. Seidle</text>
 <text x="22.352" y="21.717" size="1.27" layer="21" font="vector" ratio="15">Pressure</text>
 <text x="10.033" y="35.941" size="1.27" layer="21" font="vector" ratio="15">Temp &amp; Humidity</text>
@@ -213,8 +213,8 @@ Bkup</text>
 <text x="44.831" y="41.402" size="1.016" layer="21" font="vector" ratio="15">WDir</text>
 <text x="6.223" y="26.162" size="1.016" layer="21" font="vector" ratio="15">D8</text>
 <text x="10.16" y="26.162" size="1.016" layer="21" font="vector" ratio="15">D7</text>
-<text x="5.08" y="37.973" size="1.016" layer="21" font="vector" ratio="15">GPS
-PWR</text>
+<text x="5.08" y="37.973" size="1.016" layer="21" font="vector" ratio="15">PWR
+CTL</text>
 <text x="5.08" y="41.402" size="1.016" layer="21" font="vector" ratio="15">GRX</text>
 <text x="5.08" y="43.942" size="1.016" layer="21" font="vector" ratio="15">GTX</text>
 <text x="5.08" y="49.022" size="1.016" layer="21" font="vector" ratio="15">RAIN</text>
@@ -2186,7 +2186,7 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <attribute name="VALUE" value="1K" x="30.226" y="40.513" size="0.8128" layer="27" font="vector" rot="R180"/>
 <attribute name="PROD_ID" value="RES-07856" x="29.21" y="39.37" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="LOGO2" library="SparkFun-Aesthetics" package="SFE_LOGO_NAME_FLAME_.1" value="SFE_LOGO_NAME_FLAME.1_INCH" x="24.384" y="11.303"/>
+<element name="LOGO2" library="SparkFun-Aesthetics" package="SFE_LOGO_NAME_FLAME_.1" value="SFE_LOGO_NAME_FLAME.1_INCH" x="20.955" y="11.43"/>
 <element name="R7" library="SparkFun-Resistors" package="0603-RES" value="1K" x="31.75" y="19.05" smashed="yes" rot="R90">
 <attribute name="NAME" x="30.988" y="18.161" size="0.8128" layer="25" font="vector" rot="R90"/>
 <attribute name="VALUE" value="1K" x="32.893" y="18.034" size="0.8128" layer="27" font="vector" rot="R90"/>
