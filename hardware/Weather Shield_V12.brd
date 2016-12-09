@@ -163,11 +163,11 @@
 <text x="31.877" y="33.655" size="1.27" layer="21" font="vector" ratio="15">Light</text>
 <text x="38.735" y="20.32" size="1.27" layer="21" font="vector" ratio="15">GPS</text>
 <wire x1="2.54" y1="0" x2="50.8" y2="0" width="0.2032" layer="20"/>
-<wire x1="0" y1="57.15" x2="2.54" y2="59.69" width="0.254" layer="20"/>
-<wire x1="2.54" y1="59.69" x2="50.8" y2="59.69" width="0.254" layer="20"/>
-<wire x1="50.8" y1="59.69" x2="53.34" y2="57.15" width="0.254" layer="20"/>
-<wire x1="53.34" y1="2.54" x2="50.8" y2="0" width="0.254" layer="20"/>
-<wire x1="2.54" y1="0" x2="0" y2="2.54" width="0.254" layer="20"/>
+<wire x1="0" y1="57.15" x2="2.54" y2="59.69" width="0.2032" layer="20"/>
+<wire x1="2.54" y1="59.69" x2="50.8" y2="59.69" width="0.2032" layer="20"/>
+<wire x1="50.8" y1="59.69" x2="53.34" y2="57.15" width="0.2032" layer="20"/>
+<wire x1="53.34" y1="2.54" x2="50.8" y2="0" width="0.2032" layer="20"/>
+<wire x1="2.54" y1="0" x2="0" y2="2.54" width="0.2032" layer="20"/>
 <text x="14.351" y="41.91" size="1.27" layer="21" font="vector" ratio="15">Rain</text>
 <text x="35.052" y="41.91" size="1.27" layer="21" font="vector" ratio="15">Wind</text>
 <text x="8.001" y="3.048" size="1.27" layer="21" font="vector" ratio="15">HW-UART</text>
@@ -2142,32 +2142,32 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <attribute name="VALUE" value="1K" x="41.656" y="40.513" size="0.8128" layer="27" font="vector" rot="R180"/>
 <attribute name="PROD_ID" value="RES-07856" x="40.64" y="39.37" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="D9" library="SparkFun-DiscreteSemi" package="SOD-323" value="" x="31.75" y="36.83" smashed="yes">
+<element name="D9" library="SparkFun-DiscreteSemi" package="SOD-323" value="250mA/100V" x="31.75" y="36.83" smashed="yes">
 <attribute name="NAME" x="30.861" y="37.846" size="0.8128" layer="25"/>
 <attribute name="VALUE" value="250mA/100V" x="30.734" y="35.433" size="0.8128" layer="27"/>
 <attribute name="PROD_ID" value="DIO-09646" x="31.75" y="36.83" size="1.778" layer="27" display="off"/>
 </element>
-<element name="D10" library="SparkFun-DiscreteSemi" package="SOD-323" value="" x="35.56" y="36.83" smashed="yes">
+<element name="D10" library="SparkFun-DiscreteSemi" package="SOD-323" value="250mA/100V" x="35.56" y="36.83" smashed="yes">
 <attribute name="NAME" x="34.671" y="37.846" size="0.8128" layer="25"/>
 <attribute name="VALUE" value="250mA/100V" x="34.544" y="35.433" size="0.8128" layer="27"/>
 <attribute name="PROD_ID" value="DIO-09646" x="35.56" y="36.83" size="1.778" layer="27" display="off"/>
 </element>
-<element name="D7" library="SparkFun-DiscreteSemi" package="SOD-323" value="" x="39.37" y="36.83" smashed="yes">
+<element name="D7" library="SparkFun-DiscreteSemi" package="SOD-323" value="250mA/100V" x="39.37" y="36.83" smashed="yes">
 <attribute name="NAME" x="38.481" y="37.846" size="0.8128" layer="25"/>
 <attribute name="VALUE" value="250mA/100V" x="38.354" y="35.433" size="0.8128" layer="27"/>
 <attribute name="PROD_ID" value="DIO-09646" x="39.37" y="36.83" size="1.778" layer="27" display="off"/>
 </element>
-<element name="D8" library="SparkFun-DiscreteSemi" package="SOD-323" value="" x="43.18" y="36.83" smashed="yes">
+<element name="D8" library="SparkFun-DiscreteSemi" package="SOD-323" value="250mA/100V" x="43.18" y="36.83" smashed="yes">
 <attribute name="NAME" x="42.291" y="37.846" size="0.8128" layer="25"/>
 <attribute name="VALUE" value="250mA/100V" x="42.164" y="35.433" size="0.8128" layer="27"/>
 <attribute name="PROD_ID" value="DIO-09646" x="43.18" y="36.83" size="1.778" layer="27" display="off"/>
 </element>
-<element name="D5" library="SparkFun-DiscreteSemi" package="SOD-323" value="" x="21.59" y="39.37" smashed="yes" rot="R180">
+<element name="D5" library="SparkFun-DiscreteSemi" package="SOD-323" value="250mA/100V" x="21.59" y="39.37" smashed="yes" rot="R180">
 <attribute name="NAME" x="22.479" y="38.354" size="0.8128" layer="25" rot="R180"/>
 <attribute name="VALUE" value="250mA/100V" x="22.606" y="40.767" size="0.8128" layer="27" rot="R180"/>
 <attribute name="PROD_ID" value="DIO-09646" x="21.59" y="39.37" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="D6" library="SparkFun-DiscreteSemi" package="SOD-323" value="" x="17.78" y="39.37" smashed="yes" rot="R180">
+<element name="D6" library="SparkFun-DiscreteSemi" package="SOD-323" value="250mA/100V" x="17.78" y="39.37" smashed="yes" rot="R180">
 <attribute name="NAME" x="18.669" y="38.354" size="0.8128" layer="25" rot="R180"/>
 <attribute name="VALUE" value="250mA/100V" x="18.796" y="40.767" size="0.8128" layer="27" rot="R180"/>
 <attribute name="PROD_ID" value="DIO-09646" x="17.78" y="39.37" size="1.778" layer="27" rot="R180" display="off"/>
