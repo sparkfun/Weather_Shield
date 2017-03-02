@@ -14,7 +14,7 @@
  Measurements are reported once a second but windspeed and rain gauge are tied to interrupts that are
  calcualted at each report.
  
- This example code assumes the GP-635T GPS module is attached.
+ This example code assumes the GP-735 GPS module is attached.
 
  Updated by Joel Bartlett
  03/02/2017
