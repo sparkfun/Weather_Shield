@@ -22,7 +22,7 @@ Documentation
 * **[Hookup Guide](https://learn.sparkfun.com/tutorials/weather-shield-hookup-guide)** - Basic hookup guide for the Weather Shield.
 * **[SparkFun Fritzing repo](https://github.com/sparkfun/Fritzing_Parts)** - Fritzing diagrams for SparkFun products.
 * **[SparkFun 3D Model repo](https://github.com/sparkfun/3D_Models)** - 3D models of SparkFun products. 
-* **[HTU21D Library](https://github.com/sparkfun/SparkFun_HTU21D_Breakout_Arduino_Library)** - The HTU21D humidity sensor was used on older versions of the Weather Shield so if you have an older version you may need this library to run the examples.
+* **[HTU21D Library](https://github.com/sparkfun/SparkFun_HTU21D_Breakout_Arduino_Library)** - The HTU21D humidity sensor was used on DEV-12081 and prior versions of the Weather Shield so if you have an older version you may need this library to run the examples.
 
 License Information
 -------------------
