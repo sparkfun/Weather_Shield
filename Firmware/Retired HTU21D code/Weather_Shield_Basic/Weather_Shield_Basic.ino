@@ -1,16 +1,16 @@
 /*
- Weather Shield Example
- By: Nathan Seidle
- SparkFun Electronics
- Date: June 10th, 2016
- License: This code is public domain but you buy me a beer if you use this and we meet someday (Beerware license).
+  Weather Shield Example
+  By: Nathan Seidle
+  SparkFun Electronics
+  Date: June 10th, 2016
+  License: This code is public domain but you buy me a beer if you use this and we meet someday (Beerware license).
 
- This example prints the current humidity, air pressure, temperature and light levels.
+  This example prints the current humidity, air pressure, temperature and light levels.
 
- The weather shield is capable of a lot. Be sure to checkout the other more advanced examples for creating
- your own weather station.
+  The weather shield is capable of a lot. Be sure to checkout the other more advanced examples for creating
+  your own weather station.
 
- */
+*/
 
 #include <Wire.h> //I2C needed for sensors
 #include "SparkFunMPL3115A2.h" //Pressure sensor - Search "SparkFun MPL3115" and install from Library Manager
@@ -74,7 +74,7 @@ void loop()
       Serial.println("I2C communication to sensors is not working. Check solder connections.");
 
       //Try re-initializing the I2C comm and the sensors
-      myPressure.begin(); 
+      myPressure.begin();
       myPressure.setModeBarometer();
       myPressure.setOversampleRate(7);
       myPressure.enableEventFlags();

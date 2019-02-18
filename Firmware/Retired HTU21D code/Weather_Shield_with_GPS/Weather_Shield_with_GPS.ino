@@ -1,22 +1,22 @@
-/* 
- Weather Shield Example
- By: Nathan Seidle
- SparkFun Electronics
- Date: November 16th, 2013
- License: This code is public domain but you buy me a beer if you use this and we meet someday (Beerware license).
- 
- Much of this is based on Mike Grusin's USB Weather Board code: https://www.sparkfun.com/products/10586
- 
- This code reads all the various sensors (wind speed, direction, rain gauge, humidty, pressure, light, batt_lvl)
- and reports it over the serial comm port. This can be easily routed to an datalogger (such as OpenLog) or
- a wireless transmitter (such as Electric Imp).
- 
- Measurements are reported once a second but windspeed and rain gauge are tied to interrupts that are
- calcualted at each report.
- 
- This example code assumes the GP-635T GPS module is attached.
- 
- */
+/*
+  Weather Shield Example
+  By: Nathan Seidle
+  SparkFun Electronics
+  Date: November 16th, 2013
+  License: This code is public domain but you buy me a beer if you use this and we meet someday (Beerware license).
+
+  Much of this is based on Mike Grusin's USB Weather Board code: https://www.sparkfun.com/products/10586
+
+  This code reads all the various sensors (wind speed, direction, rain gauge, humidty, pressure, light, batt_lvl)
+  and reports it over the serial comm port. This can be easily routed to an datalogger (such as OpenLog) or
+  a wireless transmitter (such as Electric Imp).
+
+  Measurements are reported once a second but windspeed and rain gauge are tied to interrupts that are
+  calcualted at each report.
+
+  This example code assumes the GP-635T GPS module is attached.
+
+*/
 
 #include <Wire.h> //I2C needed for sensors
 #include "SparkFunMPL3115A2.h" //Pressure sensor - Search "SparkFun MPL3115" and install from Library Manager
@@ -27,7 +27,7 @@
 TinyGPSPlus gps;
 
 static const int RXPin = 5, TXPin = 4; //GPS is attached to pin 4(TX from GPS) and pin 5(RX into GPS)
-SoftwareSerial ss(RXPin, TXPin); 
+SoftwareSerial ss(RXPin, TXPin);
 
 MPL3115A2 myPressure; //Create an instance of the pressure sensor
 HTU21D myHumidity; //Create an instance of the humidity sensor
@@ -114,7 +114,7 @@ void rainIRQ()
   raintime = millis(); // grab current time
   raininterval = raintime - rainlast; // calculate interval between this and last event
 
-    if (raininterval > 10) // ignore switch-bounce glitches less than 10mS after initial edge
+  if (raininterval > 10) // ignore switch-bounce glitches less than 10mS after initial edge
   {
     dailyrainin += 0.011; //Each dump is 0.011" of water
     rainHour[minutes] += 0.011; //Increase this minute's amount of rain
@@ -143,13 +143,13 @@ void setup()
 
   pinMode(STAT1, OUTPUT); //Status LED Blue
   pinMode(STAT2, OUTPUT); //Status LED Green
-  
+
   pinMode(GPS_PWRCTL, OUTPUT);
   digitalWrite(GPS_PWRCTL, HIGH); //Pulling this pin low puts GPS to sleep but maintains RTC and RAM
-  
+
   pinMode(WSPEED, INPUT_PULLUP); // input from wind meters windspeed sensor
   pinMode(RAIN, INPUT_PULLUP); // input from wind meters rain gauge sensor
-  
+
   pinMode(REFERENCE_3V3, INPUT);
   pinMode(LIGHT, INPUT);
 
@@ -157,7 +157,7 @@ void setup()
   myPressure.begin(); // Get sensor online
   myPressure.setModeBarometer(); // Measure pressure in Pascals from 20 to 110 kPa
   myPressure.setOversampleRate(7); // Set Oversample to the recommended 128
-  myPressure.enableEventFlags(); // Enable all three pressure and temp event flags 
+  myPressure.enableEventFlags(); // Enable all three pressure and temp event flags
 
   //Configure the humidity sensor
   myHumidity.begin();
@@ -179,14 +179,14 @@ void setup()
 void loop()
 {
   //Keep track of which minute it is
-  if(millis() - lastSecond >= 1000)
+  if (millis() - lastSecond >= 1000)
   {
     digitalWrite(STAT1, HIGH); //Blink stat LED
-    
+
     lastSecond += 1000;
 
     //Take a speed and direction reading every second for 2 minute average
-    if(++seconds_2m > 119) seconds_2m = 0;
+    if (++seconds_2m > 119) seconds_2m = 0;
 
     //Calc the wind speed and direction every second for 120 second to get 2 minute average
     float currentSpeed = get_wind_speed();
@@ -198,25 +198,25 @@ void loop()
     //if(seconds_2m % 10 == 0) displayArrays(); //For testing
 
     //Check to see if this is a gust for the minute
-    if(currentSpeed > windgust_10m[minutes_10m])
+    if (currentSpeed > windgust_10m[minutes_10m])
     {
       windgust_10m[minutes_10m] = currentSpeed;
       windgustdirection_10m[minutes_10m] = currentDirection;
     }
 
     //Check to see if this is a gust for the day
-    if(currentSpeed > windgustmph)
+    if (currentSpeed > windgustmph)
     {
       windgustmph = currentSpeed;
       windgustdir = currentDirection;
     }
-    
-    if(++seconds > 59)
+
+    if (++seconds > 59)
     {
       seconds = 0;
 
-      if(++minutes > 59) minutes = 0;
-      if(++minutes_10m > 9) minutes_10m = 0;
+      if (++minutes > 59) minutes = 0;
+      if (++minutes_10m > 9) minutes_10m = 0;
 
       rainHour[minutes] = 0; //Zero out this minute's rainfall amount
       windgust_10m[minutes_10m] = 0; //Zero out this minute's gust
@@ -235,7 +235,7 @@ void loop()
 static void smartdelay(unsigned long ms)
 {
   unsigned long start = millis();
-  do 
+  do
   {
     while (ss.available())
       gps.encode(ss.read());
@@ -260,14 +260,14 @@ void calcWeather()
 
   //Calc windspdmph_avg2m
   float temp = 0;
-  for(int i = 0 ; i < 120 ; i++)
+  for (int i = 0 ; i < 120 ; i++)
     temp += windspdavg[i];
   temp /= 120.0;
   windspdmph_avg2m = temp;
 
   //Calc winddir_avg2m
   temp = 0; //Can't use winddir_avg2m because it's an int
-  for(int i = 0 ; i < 120 ; i++)
+  for (int i = 0 ; i < 120 ; i++)
     temp += winddiravg[i];
   temp /= 120;
   winddir_avg2m = temp;
@@ -277,10 +277,10 @@ void calcWeather()
   //Find the largest windgust in the last 10 minutes
   windgustmph_10m = 0;
   windgustdir_10m = 0;
-  //Step through the 10 minutes  
-  for(int i = 0; i < 10 ; i++)
+  //Step through the 10 minutes
+  for (int i = 0; i < 10 ; i++)
   {
-    if(windgust_10m[i] > windgustmph_10m)
+    if (windgust_10m[i] > windgustmph_10m)
     {
       windgustmph_10m = windgust_10m[i];
       windgustdir_10m = windgustdirection_10m[i];
@@ -300,8 +300,8 @@ void calcWeather()
 
   //Total rainfall for the day is calculated within the interrupt
   //Calculate amount of rainfall for the last 60 minutes
-  rainin = 0;  
-  for(int i = 0 ; i < 60 ; i++)
+  rainin = 0;
+  for (int i = 0 ; i < 60 ; i++)
     rainin += rainHour[i];
 
   //Calc pressure
@@ -314,7 +314,7 @@ void calcWeather()
 
   //Calc battery level
   batt_lvl = get_battery_level();
-  
+
 }
 
 //Returns the voltage of the light sensor based on the 3.3V rail
@@ -324,12 +324,12 @@ float get_light_level()
   float operatingVoltage = analogRead(REFERENCE_3V3);
 
   float lightSensor = analogRead(LIGHT);
-  
+
   operatingVoltage = 3.3 / operatingVoltage; //The reference voltage is 3.3V
-  
+
   lightSensor = operatingVoltage * lightSensor;
-  
-  return(lightSensor);
+
+  return (lightSensor);
 }
 
 //Returns the voltage of the raw pin based on the 3.3V rail
@@ -341,14 +341,14 @@ float get_battery_level()
   float operatingVoltage = analogRead(REFERENCE_3V3);
 
   float rawVoltage = analogRead(BATT);
-  
+
   operatingVoltage = 3.30 / operatingVoltage; //The reference voltage is 3.3V
-  
+
   rawVoltage = operatingVoltage * rawVoltage; //Convert the 0 to 1023 int to actual voltage on BATT pin
-  
+
   rawVoltage *= 4.90; //(3.9k+1k)/1k - multiple BATT voltage by the voltage divider to get actual system voltage
-  
-  return(rawVoltage);
+
+  return (rawVoltage);
 }
 
 //Returns the instataneous wind speed
@@ -366,14 +366,14 @@ float get_wind_speed()
   windSpeed *= 1.492; //4 * 1.492 = 5.968MPH
 
   /* Serial.println();
-   Serial.print("Windspeed:");
-   Serial.println(windSpeed);*/
+    Serial.print("Windspeed:");
+    Serial.println(windSpeed);*/
 
-  return(windSpeed);
+  return (windSpeed);
 }
 
 //Read the wind direction sensor, return heading in degrees
-int get_wind_direction() 
+int get_wind_direction()
 {
   unsigned int adc;
 
@@ -415,17 +415,17 @@ void printWeather()
   Serial.print(",windspeedmph=");
   Serial.print(windspeedmph, 1);
   /*Serial.print(",windgustmph=");
-  Serial.print(windgustmph, 1);
-  Serial.print(",windgustdir=");
-  Serial.print(windgustdir);
-  Serial.print(",windspdmph_avg2m=");
-  Serial.print(windspdmph_avg2m, 1);
-  Serial.print(",winddir_avg2m=");
-  Serial.print(winddir_avg2m);
-  Serial.print(",windgustmph_10m=");
-  Serial.print(windgustmph_10m, 1);
-  Serial.print(",windgustdir_10m=");
-  Serial.print(windgustdir_10m);*/
+    Serial.print(windgustmph, 1);
+    Serial.print(",windgustdir=");
+    Serial.print(windgustdir);
+    Serial.print(",windspdmph_avg2m=");
+    Serial.print(windspdmph_avg2m, 1);
+    Serial.print(",winddir_avg2m=");
+    Serial.print(winddir_avg2m);
+    Serial.print(",windgustmph_10m=");
+    Serial.print(windgustmph_10m, 1);
+    Serial.print(",windgustdir_10m=");
+    Serial.print(windgustdir_10m);*/
   Serial.print(",humidity=");
   Serial.print(humidity, 1);
   Serial.print(",tempf=");
