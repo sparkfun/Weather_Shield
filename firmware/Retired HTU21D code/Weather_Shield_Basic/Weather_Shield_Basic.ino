@@ -69,7 +69,7 @@ void loop()
     //Check Humidity Sensor
     float humidity = myHumidity.readHumidity();
 
-    if (humidity == 998) //Humidty sensor failed to respond
+    if (humidity == ERROR_I2C_TIMEOUT) //Humidty sensor failed to respond
     {
       Serial.println("I2C communication to sensors is not working. Check solder connections.");
 
