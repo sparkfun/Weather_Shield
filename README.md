@@ -33,7 +33,7 @@ Product Versions
 Version History
 ---------------
 * [v12](https://github.com/sparkfun/Weather_Shield/releases/tag/v12) - Latest Version
-* [v1.1](https://github.com/sparkfun/Weather_Shield/releases/tag/v1.1) - Initial release
+* [v1.1](https://github.com/sparkfun/Weather_Shield/releases/tag/v1.1) - Initial Release
 
 License Information
 -------------------
