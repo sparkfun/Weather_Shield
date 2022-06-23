@@ -405,6 +405,17 @@ int get_wind_direction()
   return (-1); // error, disconnected?
 }
 
+/* Normalize Pressure to Sea Level based on GPS altitude
+ *  See https://www.sensorsone.com/altitude-pressure-units-conversion/ for a chart
+ *  used to derive the eqns below. or https://www.engineeringtoolbox.com/air-altitude-pressure-d_462.html  
+ *  linear approximation and interpolation used as it's close enough for sea level to 10,000ft (3048m)
+*/
+float BarometricNormalization(float ALT, float Pressure) {
+  //Imperial Pressure units in inHG
+  return Pressure + (0.00094797505*ALT+0.1407194); //inHG
+  //Metric Pressure units in kPa
+  //return Pressure + (0.10543757571*ALT+0.4668666); //kPa
+}
 
 //Prints the various variables directly to the port
 //I don't like the way this function is written but Arduino doesn't support floats under sprintf
@@ -437,8 +448,10 @@ void printWeather()
   Serial.print(rainin, 2);
   Serial.print(",dailyrainin=");
   Serial.print(dailyrainin, 2);
-  Serial.print(",pressure=");
+  Serial.print(",pressure_raw=");
   Serial.print(pressure, 2);
+  Serial.print(",pressure_normalized=");
+  Serial.print(BarometricNormalization(gps.altitude.feet(),pressure), 2); //can set static Altitude if you wanted instead of basing it on GPS as That will hunt around
   Serial.print(",batt_lvl=");
   Serial.print(batt_lvl, 2);
   Serial.print(",light_lvl=");
@@ -466,5 +479,3 @@ void printWeather()
   Serial.println("#");
 
 }
-
-
