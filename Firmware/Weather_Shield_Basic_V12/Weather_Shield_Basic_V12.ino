@@ -40,7 +40,7 @@ long lastSecond; //The millis counter to see when a second rolls by
 
 void setup()
 {
-  Serial.begin(9600);
+  Serial.begin(115200);
   Serial.println("Weather Shield Example");
 
   pinMode(STAT_BLUE, OUTPUT); //Status LED Blue
